@@ -1,0 +1,148 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+main .left {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.left:hover {
+  transform: scale(1.01);
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #1b1b1b;
+  padding: 1rem;
+  overflow: auto;
+  color: #f8f8f2;
+  transition: background-color 0.3s ease;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  user-select: none;
+  border-radius: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+main .left .review:hover {
+  transform: scale(1.05);
+}
+
+.code-btn {
+  background: linear-gradient(90deg, #646cff, #8e91ff);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(100, 108, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.code-btn:hover {
+  background: linear-gradient(90deg, #4b50cc, #6b6eff);
+  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.6);
+}
+
+main .right {
+  background: linear-gradient(135deg, #2e2e2e, #3a3a3a);
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  overflow: auto;
+  color: #e0e0e0;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+main .right:hover {
+  background-color: #3a3a3a;
+}
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* or center if you want them centered */
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.app-header h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #646cff;
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  font-size: 1rem;
+  margin: 0;
+  color: #ccc;
+  font-style: italic;
+}
+.footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #ccc;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #646cff;
+  transform: scale(1.2);
+}
