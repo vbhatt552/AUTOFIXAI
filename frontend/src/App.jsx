@@ -17,6 +17,10 @@ const [loading,setLoading] = useState(false)
     prism.highlightAll();
   },[code]);
   async function reviewCode() {
+    if (!code.trim()) {
+      setReview("⚠️ Please enter some code to review.");
+      return;
+    }
     try {
     setLoading(true);
       const response = await axios.post('http://localhost:3000/ai/get-review', { code });
@@ -77,7 +81,7 @@ const [loading,setLoading] = useState(false)
       </button>
         </div>
         <div className="review">
-          <button onClick={reviewCode} className="code-btn" disabled={!code||loading}>{loading?'Reviewing...':'Review'}</button>
+          <button onClick={reviewCode} className="code-btn" disabled={loading}>{loading?'Reviewing...':'Review'}</button>
         </div>
       </div>
       <div className="right" style={{fontSize:'14px'}}>
