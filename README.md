@@ -80,7 +80,7 @@ AutoFixAI/
 
 ---
 ##Screenshots
-![App ScreenShot](images/Screenshot 2025-04-22 172046.png)
+![App ScreenShot](https://github.com/vbhatt552/AUTOFIXAI/blob/master/images/Screenshot%202025-04-22%20172046.png)
 ![Code Input](images/Screenshot 2025-04-22 172200.png)
 ![Code output](Screenshot 2025-04-22 172236.png)
 ## ⚙️ Setup Instructions
