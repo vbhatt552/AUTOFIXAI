@@ -10,19 +10,22 @@ import axios from 'axios'
  import '@fortawesome/fontawesome-free/css/all.min.css';
 
  function App() {
-  const[code,setCode] = useState(`
-`)
+  const[code,setCode] = useState(``)
 const[review,setReview] = useState(``)
+const [loading,setLoading] = useState(false)
   useEffect(()=>{
     prism.highlightAll();
   },[code]);
   async function reviewCode() {
     try {
+    setLoading(true);
       const response = await axios.post('http://localhost:3000/ai/get-review', { code });
       setReview(response.data);
     } catch (err) {
       console.error("Error fetching code review:", err);
       setReview("An error occurred while fetching the review.");
+    }finally{
+      setLoading(false);
     }
   }
   const copy = (code) => {
@@ -74,7 +77,7 @@ const[review,setReview] = useState(``)
       </button>
         </div>
         <div className="review">
-          <button onClick={reviewCode} className="code-btn">Review</button>
+          <button onClick={reviewCode} className="code-btn" disabled={!code||loading}>{loading?'Reviewing...':'Review'}</button>
         </div>
       </div>
       <div className="right" style={{fontSize:'14px'}}>
