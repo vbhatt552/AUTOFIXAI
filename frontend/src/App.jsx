@@ -15,7 +15,7 @@ import axios from 'axios'
 const[review,setReview] = useState(``)
   useEffect(()=>{
     prism.highlightAll();
-  })
+  },[code]);
   async function reviewCode() {
     try {
       const response = await axios.post('http://localhost:3000/ai/get-review', { code });
@@ -25,6 +25,11 @@ const[review,setReview] = useState(``)
       setReview("An error occurred while fetching the review.");
     }
   }
+  const copy = (code) => {
+    navigator.clipboard.writeText(code)
+      .catch((err) => console.error("Copy failed: ", err));
+  };
+  
   return (
     <>
     <main>
@@ -51,7 +56,22 @@ const[review,setReview] = useState(``)
     overflow: 'auto'
   }}
 />
-
+<button
+        onClick={()=>copy(code)}
+        style={{
+          position: 'absolute',
+          top: '10px',
+          right: '10px',
+          background: '#007bff',
+          color: 'white',
+          border: 'none',
+          padding: '5px 10px',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+      >
+        📋 Copy Code
+      </button>
         </div>
         <div className="review">
           <button onClick={reviewCode} className="code-btn">Review</button>
