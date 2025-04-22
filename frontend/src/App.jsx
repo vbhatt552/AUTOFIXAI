@@ -10,9 +10,8 @@ import axios from 'axios'
  import '@fortawesome/fontawesome-free/css/all.min.css';
 
  function App() {
-  const[code,setCode] = useState(`function sum(){
-  return 1+1
-}`)
+  const[code,setCode] = useState(`
+`)
 const[review,setReview] = useState(``)
   useEffect(()=>{
     prism.highlightAll();
@@ -30,13 +29,14 @@ const[review,setReview] = useState(``)
     <>
     <main>
       <div className='app-header'>
+      <img src="/AutofixAIlogo.png" alt="AutoFixAI Logo" style={{ height: '100px', marginRight: '10px',marginBottom:'-34px' }} />
       <h4>AUTOFixAI</h4>
       <p>-your AI code debugger</p>
       </div>
       <div className="left">
         <div className="code">
           
-        <Editor
+        <Editor 
   value={code}
   onValueChange={code => setCode(code)}
   highlight={code => Prism.highlight(code, Prism.languages.javascript, 'javascript')}
