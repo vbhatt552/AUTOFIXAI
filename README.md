@@ -79,7 +79,10 @@ AutoFixAI/
 4. The response is parsed and displayed on the right-side review panel.
 
 ---
-
+##Screenshots
+[App ScreenShot](images/Screenshot 2025-04-22 172046.png}
+[Code Input](images/Screenshot 2025-04-22 172200.png)
+[Code output](Screenshot 2025-04-22 172236.png)
 ## ⚙️ Setup Instructions
 
 ### 🔧 Backend Setup
